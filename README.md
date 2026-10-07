@@ -1,36 +1,129 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sistema Condominial - Frontend
 
-## Getting Started
+Interface web do Sistema de Gestão Condominial, desenvolvida em Next.js e integrada à API REST construída com Fastify.
 
-First, run the development server:
+## Tecnologias
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+
+## Funcionalidades
+
+O sistema possui interface para gerenciamento de:
+
+### Condomínios
+
+- Listagem de condomínios
+- Cadastro de novos condomínios
+- Edição de condomínios
+- Exclusão de condomínios
+
+### Unidades
+
+- Listagem de unidades
+- Cadastro de novas unidades
+- Edição de unidades
+- Exclusão de unidades
+
+### Moradores
+
+- Listagem de moradores
+- Cadastro de novos moradores
+- Edição de moradores
+- Exclusão de moradores
+
+## Integração com o Backend
+
+O frontend utiliza a API Fastify disponível em:
+
+```text
+http://127.0.0.1:3000
+```
+
+O frontend é executado em:
+
+```text
+http://localhost:3001
+```
+
+## Como executar
+
+### 1. Clonar o repositório
+
+```bash
+git clone https://github.com/PCBorges10/sistema-condominio-web.git
+```
+
+### 2. Entrar na pasta
+
+```bash
+cd sistema-condominio-web
+```
+
+### 3. Instalar as dependências
+
+```bash
+npm install
+```
+
+### 4. Executar o frontend
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A aplicação estará disponível em:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3001
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Backend
 
-## Learn More
+Para o funcionamento completo do sistema, a API também precisa estar em execução.
 
-To learn more about Next.js, take a look at the following resources:
+Repositório:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```text
+https://github.com/PCBorges10/sistema-condominio-api
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+A API deve estar disponível em:
 
-## Deploy on Vercel
+```text
+http://127.0.0.1:3000
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Estrutura principal
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+sistema-condominio-web/
+├── app/
+│   ├── condominios/
+│   ├── unidades/
+│   ├── moradores/
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── BackButton.tsx
+│   ├── DeleteCondominioButton.tsx
+│   ├── DeleteUnidadeButton.tsx
+│   └── DeleteMoradorButton.tsx
+├── public/
+├── package.json
+└── README.md
+```
+
+## Arquitetura
+
+```text
+Navegador
+    ↓
+Next.js - Porta 3001
+    ↓
+Fastify API - Porta 3000
+    ↓
+MySQL - Porta 3306
+```

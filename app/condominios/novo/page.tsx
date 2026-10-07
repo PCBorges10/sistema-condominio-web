@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import BackButton from '@/components/BackButton'
 
 export default function NovoCondominioPage() {
   const router = useRouter()
@@ -46,6 +47,8 @@ export default function NovoCondominioPage() {
 
   return (
     <main className="min-h-screen bg-gray-100 p-10">
+      <BackButton />
+
       <h1 className="text-3xl font-bold text-gray-900">
         Novo Condomínio
       </h1>
